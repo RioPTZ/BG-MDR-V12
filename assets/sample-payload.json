@@ -1,0 +1,34 @@
+{
+  "title": "BẢNG BÁO GIÁ",
+  "summary": "Báo giá rèm theo form ngang chuẩn đã chốt",
+  "infoLine": "Tra đơn giá theo workbook Vol 12, hệ Standard mặc định nếu không có chỉ định khác.",
+  "rows": [
+    {
+      "ma_sp": "BS 1013",
+      "he": "Standard",
+      "ngang": "1115",
+      "cao": "1870",
+      "sl": "1",
+      "klg": "2.09",
+      "don_gia": "535.000 đ",
+      "ck": "45%",
+      "sau_ck": "611.000 đ",
+      "ghi_chu": ""
+    },
+    {
+      "ma_sp": "MG 314",
+      "he": "Standard",
+      "ngang": "1500",
+      "cao": "2000",
+      "sl": "1",
+      "klg": "3.00",
+      "don_gia": "660.000 đ",
+      "ck": "45%",
+      "sau_ck": "1.089.000 đ",
+      "ghi_chu": ""
+    }
+  ],
+  "subtotalText": "1.700.000 đ",
+  "totalText": "1.700.000 đ",
+  "footerNote": "Cộng tiền hàng là tổng cột Sau CK; dòng subtotal merge 2 ô đầu, cột Đơn giá để trống."
+}

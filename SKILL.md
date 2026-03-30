@@ -18,8 +18,9 @@ This packaged version is meant to be reusable by other bots, so keep the workflo
 3. Find the correct sheet and price column in the workbook.
 4. Apply SON Home area rules exactly.
 5. Calculate line totals and after-discount totals.
-6. Render the quote card image in the approved layout.
-7. Return or send the generated image.
+6. Build a render payload JSON.
+7. Render the quote card image in the approved layout.
+8. Return or send the generated image.
 
 If the workbook mapping is ambiguous, stop and ask instead of guessing.
 
@@ -114,11 +115,17 @@ Use this script to render a quote-card PNG from an input JSON payload.
 
 Expected usage:
 ```bash
-python3 scripts/render_quote_card.py input.json output.png
+python3 scripts/render_quote_card.py assets/sample-payload.json out.png
 ```
+
+### assets/sample-payload.json
+Use this bundled sample payload to test the render path quickly before wiring the skill into another bot.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
+
+### references/setup-notes.md
+Read this when setting up the skill on another machine or bot runtime.
 
 ## Quality check before finishing
 
