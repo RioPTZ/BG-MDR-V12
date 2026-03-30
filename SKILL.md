@@ -1,0 +1,132 @@
+---
+name: son-home-quote-packaged
+description: Create SON Home curtain quote images from workbook-driven pricing rules, render them in the approved horizontal quote-card format, and prepare portable quote workflows for other bots or agents. Use when handling SON Home curtain quotes, pricing lookups from Vol 12-style Excel workbooks, quote-card rendering, discount calculations, or packaging the SON Home quote process for reuse.
+---
+
+# SON Home Quote Packaged
+
+## Overview
+
+Use this skill to calculate SON Home curtain quotes from the pricing workbook, apply the approved business rules, and render a clean quote image card.
+
+This packaged version is meant to be reusable by other bots, so keep the workflow portable: price lookup, area calculation, totals, and image render should not depend on hidden chat context.
+
+## Core workflow
+
+1. Read the user quote inputs.
+2. Identify product family, code, system, size, quantity, and discount.
+3. Find the correct sheet and price column in the workbook.
+4. Apply SON Home area rules exactly.
+5. Calculate line totals and after-discount totals.
+6. Render the quote card image in the approved layout.
+7. Return or send the generated image.
+
+If the workbook mapping is ambiguous, stop and ask instead of guessing.
+
+## Required pricing behavior
+
+### Price source
+- Use the Vol 12 pricing workbook or the newest workbook explicitly provided by the operator.
+- Match the correct sheet for the product family.
+- Match the correct system column.
+- Do not guess when a code range or system is unclear.
+
+### Default system rule
+- If the user explicitly provides the system, use it.
+- If no system is provided, default to `Standard`.
+- Only ask back if the surrounding context strongly suggests another system.
+
+### Required quote inputs
+Minimum fields:
+- product code
+- width
+- height
+- quantity
+- discount
+- system
+
+## Area calculation rules
+
+These rules are mandatory.
+
+### Height minimum for billing
+- If height is under 1 meter, round the billed height up to 1 meter before calculating area.
+
+### Minimum billed area
+- After height rounding, if billed area is still under 1 square meter, bill 1 square meter minimum.
+
+### Quantity rule
+- Calculate billed area for one unit first, then multiply by quantity unless the workbook explicitly requires another method.
+
+## Quote card format rules
+
+Use the approved SON Home quote image structure.
+
+### Visual direction
+- Keep the quote card in a wide horizontal format.
+- Use the soft mint pastel palette, not the old blue palette.
+- Keep the layout clean, bright, calm, and easy to scan.
+- Do not include `SON HOME` in the title unless explicitly requested.
+
+### Required table columns
+Use these columns exactly:
+- `Mã SP`
+- `Hệ`
+- `Ngang`
+- `Cao`
+- `SL`
+- `K/lg`
+- `Đơn giá`
+- `CK`
+- `Sau CK`
+- `Ghi chú`
+
+### Dimension display
+- Display width and height in `mm` inside the rendered quote table.
+- Keep calculations in meters internally.
+
+### Totals rules
+- Include a `Cộng tiền hàng` row.
+- Merge the first two cells on that subtotal row.
+- Keep `Đơn giá` blank on that subtotal row.
+- `Cộng tiền hàng` must equal the sum of the `Sau CK` column.
+- `Sau CK` must always show a number.
+- Include a highlighted final block: `THÀNH TIỀN SAU CHIẾT KHẤU`.
+
+## Notes behavior
+
+- Leave `Ghi chú` blank if no valid note is provided.
+- Keep notes short and practical.
+- Notes like `cùng chiều cao so nan với nhau` should only remain when the listed rows truly share that same condition.
+
+## Portable packaging guidance
+
+When adapting this skill for another bot:
+- keep workbook path configurable
+- keep render input JSON-based when possible
+- keep send/delivery logic separate from pricing logic
+- avoid platform-specific message syntax inside the pricing core
+
+## Files in this package
+
+### scripts/render_quote_card.py
+Use this script to render a quote-card PNG from an input JSON payload.
+
+Expected usage:
+```bash
+python3 scripts/render_quote_card.py input.json output.png
+```
+
+### references/vol12-notes.md
+Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
+
+## Quality check before finishing
+
+Before returning a quote:
+- verify the correct sheet
+- verify the correct system price column
+- verify billed area rules
+- verify discount math
+- verify subtotal and final total
+- verify the quote image keeps the approved table structure
+- verify the image is actually generated
