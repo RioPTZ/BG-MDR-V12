@@ -29,6 +29,8 @@ If the workbook mapping is ambiguous, stop and ask instead of guessing.
 ### Price source
 - Use the Vol 12 pricing workbook or the newest workbook explicitly provided by the operator.
 - Match the correct sheet for the product family.
+- Resolve requested codes through the workbook's **`Mã vải` column / code range**, not through the nearby product-name column.
+- For example, a code like `IS362` must be matched to the range that contains it (such as `IS 361 - IS 366`) before reading price columns.
 - Match the correct system column.
 - Do not guess when a code range or system is unclear.
 
@@ -131,6 +133,7 @@ Read this when setting up the skill on another machine or bot runtime.
 
 Before returning a quote:
 - verify the correct sheet
+- verify the correct code match through `Mã vải` / code range
 - verify the correct system price column
 - verify billed area rules
 - verify discount math
