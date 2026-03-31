@@ -3,7 +3,8 @@
   "defaultSystem": "Standard",
   "rendererScript": "/root/.openclaw/workspace/scripts/render_quote_card.py",
   "outputDir": "/root/.openclaw/workspace/out/quotes",
-  "activeWorkflowVersion": "3.0.0",
+  "activeWorkflowVersion": "14.0.0",
   "directDeliveryPreferred": true,
-  "sampleRegistry": "/root/.openclaw/workspace/skills/son-home-quote-image/assets/master-samples/registry.json"
+  "sampleRegistry": "/root/.openclaw/workspace/skills/son-home-quote-image/assets/master-samples/registry.json",
+  "defaultWorkbookPath": "/root/.openclaw/media/inbound/Bảng_giá_Vol_12---2fb99c70-048f-483f-a469-69050a5d3493.xlsx"
 }

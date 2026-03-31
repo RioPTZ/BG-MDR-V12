@@ -1,20 +1,20 @@
 {
   "engine": "son-home-quote-image",
-  "roadmapVersion": "9.0.0",
+  "roadmapVersion": "14.0.0",
   "priorities": [
     {
       "id": "p1-workbook-price-resolver",
       "priority": "high",
       "goal": "Resolve workbook sheet/group/unit price directly from code and system with less manual glue.",
       "value": "Removes one of the biggest manual steps in quote execution.",
-      "status": "planned"
+      "status": "done"
     },
     {
       "id": "p2-image-to-structured-input-bridge",
       "priority": "high",
       "goal": "Bridge image extraction outputs into structured input JSON for the engine automatically.",
       "value": "Connects handwriting/image path to operator path more cleanly.",
-      "status": "planned"
+      "status": "done"
     },
     {
       "id": "p3-direct-send-from-engine-entry",
@@ -28,14 +28,14 @@
       "priority": "medium",
       "goal": "Move closer to one-command execution from raw chat input to final rendered quote.",
       "value": "Improves speed and consistency for repetitive quote requests.",
-      "status": "planned"
+      "status": "done"
     },
     {
       "id": "p5-regression-fixtures",
       "priority": "medium",
       "goal": "Add reusable quote fixtures/tests for common cases: single-line, multi-line, height<1m, handwriting-confirmed path.",
       "value": "Makes upgrades safer and reduces silent regressions.",
-      "status": "planned"
+      "status": "done"
     }
   ]
 }

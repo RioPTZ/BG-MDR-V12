@@ -1,7 +1,7 @@
 {
   "workflow": "son-home-quote-image",
-  "version": "3.0.0",
-  "phase": "phase-3",
+  "version": "14.0.0",
+  "phase": "phase-14",
   "capabilities": [
     "gemini-first-handwriting-read",
     "local-ocr-cross-check",
@@ -10,6 +10,8 @@
     "validate-then-render-pipeline",
     "master-sample-registry",
     "quote-brain-reference",
-    "payload-template"
+    "payload-template",
+    "chat-entrypoint",
+    "regression-fixtures"
   ]
 }

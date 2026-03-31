@@ -1,6 +1,6 @@
 {
   "engine": "son-home-quote-image",
-  "version": "8.0.0",
+  "version": "14.0.0",
   "phasesCompleted": [
     "phase-1-memory-checklist-validator",
     "phase-2-pipeline-master-sample-registry",
@@ -9,7 +9,12 @@
     "phase-5-schema-confidence-multiline",
     "phase-6-auto-routing",
     "phase-7-super-entrypoint",
-    "phase-8-audit-status-layer"
+    "phase-8-audit-status-layer",
+    "phase-10-workbook-price-resolver",
+    "phase-11-resolver-operator-integration",
+    "phase-12-image-bridge",
+    "phase-13-raw-chat-preprocessor",
+    "phase-14-chat-entrypoint-regression-fixtures"
   ],
   "capabilities": [
     "project-memory",
@@ -25,7 +30,13 @@
     "multiline-payload-support",
     "auto-routing",
     "super-entrypoint",
-    "engine-status-audit"
+    "engine-status-audit",
+    "workbook-price-resolver",
+    "resolver-operator-integration",
+    "image-to-structured-input-bridge",
+    "raw-chat-preprocessor",
+    "chat-entrypoint",
+    "regression-fixtures"
   ],
   "routes": [
     "text-single-line",
@@ -35,9 +46,6 @@
     "ask-back"
   ],
   "gaps": [
-    "automatic workbook price resolver from code",
-    "automatic Telegram direct-send integration from engine entry",
-    "image-to-structured-input bridge",
-    "true end-to-end one-command quote execution from raw chat input"
+    "automatic Telegram direct-send integration from engine entry"
   ]
 }
