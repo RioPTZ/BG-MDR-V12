@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "id": "text-single-line",
+      "when": ["input.source=text", "input.lines=1", "ambiguity=low"],
+      "action": "resolve pricing -> build -> validate -> render -> deliver"
+    },
+    {
+      "id": "text-multi-line",
+      "when": ["input.source=text", "input.lines>1", "ambiguity=low"],
+      "action": "resolve pricing per line -> build multi-line payload -> validate -> render -> deliver"
+    },
+    {
+      "id": "image-handwriting",
+      "when": ["input.source=image", "image.handwriting_likely=true"],
+      "action": "layout inspect -> Gemini first -> OCR cross-check -> confidence score -> finalize or ask-back"
+    },
+    {
+      "id": "operator-fast-path",
+      "when": ["structured_input=ready", "ambiguity=resolved"],
+      "action": "quote_operator.py"
+    },
+    {
+      "id": "ask-back",
+      "when": ["core_fields_missing=true OR ambiguity=high"],
+      "action": "ask only for missing fields in one short line"
+    }
+  ]
+}
