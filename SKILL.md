@@ -163,6 +163,9 @@ Use this to inspect recommended next upgrades based on the current roadmap and k
 ### scripts/resolve_workbook_price.py
 Use this to reduce manual workbook searching: code -> candidate sheet / row / system column / price candidate.
 
+### scripts/quote_operator.py
+Operator mode can now attempt workbook-based unit-price resolution automatically when structured input includes workbook path + code but no `unit_price`.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -200,6 +203,9 @@ Use this to turn the current engine status into a prioritized roadmap for what t
 
 ### references/workbook-price-resolver.md
 Use this when the engine needs help moving from code to workbook row and price candidate with less manual searching.
+
+### references/resolver-integration.md
+Use this when connecting workbook price resolution into operator-mode execution.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
