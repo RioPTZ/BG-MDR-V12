@@ -10,6 +10,7 @@ Default operator config: `assets/operator/defaults.json`
 Structured input schema: `assets/schema/structured-input.schema.json`
 Routing rules: `assets/router/routing-rules.json`
 Engine status: `assets/engine-status.json`
+Upgrade roadmap: `assets/upgrade-roadmap.json`
 
 ## Overview
 
@@ -156,6 +157,9 @@ Use this as the single main entrypoint to the quote engine: route first, then ex
 ### scripts/quote_engine_status.py
 Use this to inspect engine version, completed phases, capabilities, routes, and current gaps.
 
+### scripts/quote_engine_plan.py
+Use this to inspect recommended next upgrades based on the current roadmap and known gaps.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -187,6 +191,9 @@ Use this as the top-level entry into the quote engine when you want one main com
 
 ### references/engine-audit.md
 Use this to inspect engine maturity, capability map, routes, and known gaps.
+
+### references/upgrade-planner.md
+Use this to turn the current engine status into a prioritized roadmap for what to build next.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
