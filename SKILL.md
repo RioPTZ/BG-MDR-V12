@@ -219,6 +219,9 @@ Use this when bridging image-derived extraction output into engine-ready structu
 ### references/raw-chat-preprocessor.md
 Use this when the user typed a shorthand quote request and you want a normalized candidate structure before engine execution.
 
+### references/raw-chat-shorthand-rules.md
+Use this when parsing Tún-style shorthand like spaced codes, missing system, `CK 50`, or `chia đôi`.
+
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
 

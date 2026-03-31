@@ -12,6 +12,8 @@ X_PAT = re.compile(r'(\d+[\.,]?\d*)\s*[x×]\s*(\d+[\.,]?\d*)', re.I)
 QTY_PAT = re.compile(r'(\d+)\s*(?:bộ|bo|cái|cai)', re.I)
 CK_PAT = re.compile(r'(?:chiết\s*khấu|ck)\s*[:=]?\s*(\d+[\.,]?\d*)\s*%?', re.I)
 SYS_PAT = re.compile(r'\b(Standard|Slim|Square|Premier|Lumera|Avalon|Vista|Prime|Masteri|Cordless|Top-Down|Day-Night)\b', re.I)
+SPLIT_PAT = re.compile(r'\b(chia\s*đôi|chia\s*2)\b', re.I)
+NOTE_PAT = re.compile(r'\b(so\s*nan|dây\s*1t\s*,?\s*1p|dây\s*t)\b', re.I)
 
 
 def to_float(s: str | None):
@@ -65,6 +67,17 @@ def main() -> None:
     if m:
         system = m.group(1)
 
+    note = ''
+    split_mode = bool(SPLIT_PAT.search(text))
+    if split_mode and width is not None:
+        width = width / 2
+        qty = 2
+        note = 'Trái + Phải So nan'
+    else:
+        nm = NOTE_PAT.search(text)
+        if nm:
+            note = nm.group(1)
+
     structured = {
         'code': code or '',
         'system': system,
@@ -72,9 +85,11 @@ def main() -> None:
         'height_m': height,
         'qty': qty,
         'discount_pct': discount,
+        'note': note,
         '_chat_preprocessor': {
             'source': 'raw-chat',
-            'rawText': text
+            'rawText': text,
+            'splitMode': split_mode
         }
     }
 
