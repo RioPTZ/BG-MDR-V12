@@ -166,6 +166,9 @@ Use this to reduce manual workbook searching: code -> candidate sheet / row / sy
 ### scripts/quote_operator.py
 Operator mode can now attempt workbook-based unit-price resolution automatically when structured input includes workbook path + code but no `unit_price`.
 
+### scripts/image_extract_to_structured.py
+Use this to normalize image-extraction output into engine-ready structured input JSON.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -206,6 +209,9 @@ Use this when the engine needs help moving from code to workbook row and price c
 
 ### references/resolver-integration.md
 Use this when connecting workbook price resolution into operator-mode execution.
+
+### references/image-to-structured-input.md
+Use this when bridging image-derived extraction output into engine-ready structured input.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
