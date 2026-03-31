@@ -7,6 +7,7 @@ description: Create SON Home curtain quote images from workbook-driven pricing r
 
 Workflow version reference: `assets/workflow-version.json`
 Default operator config: `assets/operator/defaults.json`
+Structured input schema: `assets/schema/structured-input.schema.json`
 
 ## Overview
 
@@ -141,6 +142,9 @@ Use this to build a final render payload JSON from resolved structured inputs.
 ### scripts/quote_operator.py
 Use this for semi-automatic operator mode: structured input -> build -> validate -> render.
 
+### scripts/score_quote_input.py
+Use this for a quick finalize/review/ask recommendation from field confidence levels before operator execution.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -160,6 +164,9 @@ Use this as the decision-core reference: defaults, priority order, image-reading
 
 ### references/operator-mode.md
 Use this when speed matters and ambiguity is already resolved; it explains the shortest safe operator flow.
+
+### references/input-confidence-rubric.md
+Use this when image-derived or OCR-derived fields feel uncertain and you want a compact scoring rubric.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.

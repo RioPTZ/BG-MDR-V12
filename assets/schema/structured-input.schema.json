@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SON Home Structured Quote Input",
+  "type": "object",
+  "oneOf": [
+    { "required": ["code", "width_m", "height_m", "unit_price", "discount_pct"] },
+    { "required": ["items"] }
+  ],
+  "properties": {
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "infoLine": { "type": "string" },
+    "system": { "type": "string", "default": "Standard" },
+    "group_name": { "type": "string" },
+    "footer_note": { "type": "string" },
+    "code": { "type": "string" },
+    "width_m": { "type": "number", "exclusiveMinimum": 0 },
+    "height_m": { "type": "number", "exclusiveMinimum": 0 },
+    "qty": { "type": "number", "exclusiveMinimum": 0, "default": 1 },
+    "unit_price": { "type": "number", "minimum": 0 },
+    "discount_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+    "note": { "type": "string" },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["code", "width_m", "height_m", "unit_price", "discount_pct"],
+        "properties": {
+          "code": { "type": "string" },
+          "system": { "type": "string" },
+          "group_name": { "type": "string" },
+          "width_m": { "type": "number", "exclusiveMinimum": 0 },
+          "height_m": { "type": "number", "exclusiveMinimum": 0 },
+          "qty": { "type": "number", "exclusiveMinimum": 0, "default": 1 },
+          "unit_price": { "type": "number", "minimum": 0 },
+          "discount_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}
