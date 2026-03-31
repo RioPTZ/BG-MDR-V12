@@ -160,6 +160,9 @@ Use this to inspect engine version, completed phases, capabilities, routes, and 
 ### scripts/quote_engine_plan.py
 Use this to inspect recommended next upgrades based on the current roadmap and known gaps.
 
+### scripts/resolve_workbook_price.py
+Use this to reduce manual workbook searching: code -> candidate sheet / row / system column / price candidate.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -194,6 +197,9 @@ Use this to inspect engine maturity, capability map, routes, and known gaps.
 
 ### references/upgrade-planner.md
 Use this to turn the current engine status into a prioritized roadmap for what to build next.
+
+### references/workbook-price-resolver.md
+Use this when the engine needs help moving from code to workbook row and price candidate with less manual searching.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
