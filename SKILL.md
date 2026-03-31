@@ -5,9 +5,13 @@ description: Create SON Home curtain quote images from workbook-driven pricing r
 
 # SON Home Quote Packaged
 
+Workflow version reference: `assets/workflow-version.json`
+
 ## Overview
 
 Use this skill to calculate SON Home curtain quotes from the pricing workbook, apply the approved business rules, and render a clean quote image card.
+
+Read `references/son-home-quote-brain.md` for the compact decision core when handling messy inputs or when you want the shortest reliable mental model for quote work.
 
 This packaged version is meant to be reusable by other bots, so keep the workflow portable: price lookup, area calculation, totals, and image render should not depend on hidden chat context.
 
@@ -130,6 +134,9 @@ When adapting this skill for another bot:
 ### scripts/render_quote_card.py
 Use this script to render a quote-card PNG from an input JSON payload.
 
+### scripts/build_quote_payload.py
+Use this to build a final render payload JSON from resolved structured inputs.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -143,6 +150,9 @@ python3 scripts/render_quote_card.py assets/sample-payload.json out.png
 
 ### assets/sample-payload.json
 Use this bundled sample payload to test the render path quickly before wiring the skill into another bot.
+
+### references/son-home-quote-brain.md
+Use this as the decision-core reference: defaults, priority order, image-reading decisions, pricing decisions, render rules, and delivery rules.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.

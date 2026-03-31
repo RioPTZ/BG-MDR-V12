@@ -1,0 +1,22 @@
+{
+  "title": "BÁO GIÁ RÈM",
+  "summary": "Mã ... · Nhóm ... · Hệ Standard · Chiết khấu ...%",
+  "infoLine": "Khổ thực tế ... x ... mm · ... bộ · tính giá theo ... m².",
+  "rows": [
+    {
+      "ma_sp": "",
+      "he": "Standard",
+      "ngang": "",
+      "cao": "",
+      "sl": "1",
+      "klg": "",
+      "don_gia": "",
+      "ck": "",
+      "sau_ck": "",
+      "ghi_chu": ""
+    }
+  ],
+  "subtotalText": "",
+  "totalText": "",
+  "footerNote": ""
+}
