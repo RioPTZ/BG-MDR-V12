@@ -149,6 +149,9 @@ Use this for a quick finalize/review/ask recommendation from field confidence le
 ### scripts/route_quote_workflow.py
 Use this to choose the best workflow path before execution: text single-line, text multi-line, image-handwriting, operator-fast-path, or ask-back.
 
+### scripts/quote_engine_entry.py
+Use this as the single main entrypoint to the quote engine: route first, then execute only when fast-path is safe.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -174,6 +177,9 @@ Use this when image-derived or OCR-derived fields feel uncertain and you want a 
 
 ### references/auto-routing.md
 Use this to choose the safest and fastest execution route before doing quote work.
+
+### references/super-entrypoint.md
+Use this as the top-level entry into the quote engine when you want one main command to orchestrate routing + safe execution.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.

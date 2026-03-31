@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 def run(cmd: list[str]) -> None:
-    subprocess.run(cmd, check=True)
+    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL)
 
 
 def main() -> None:
