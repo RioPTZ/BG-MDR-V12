@@ -1,0 +1,18 @@
+{
+  "activeMaster": "cn982-approved-2026-03-25",
+  "samples": [
+    {
+      "id": "cn982-approved-2026-03-25",
+      "label": "CN982 approved master form",
+      "status": "active",
+      "notes": [
+        "Use this as strongest layout/style reference unless Tún explicitly approves a newer sample.",
+        "Wide horizontal layout.",
+        "Very light mint pastel palette.",
+        "Do not include SON HOME in title by default.",
+        "Subtotal row merges first 2 cells and keeps Đơn giá blank.",
+        "Cộng tiền hàng must equal sum of Sau CK."
+      ]
+    }
+  ]
+}

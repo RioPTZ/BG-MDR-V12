@@ -19,8 +19,11 @@ This packaged version is meant to be reusable by other bots, so keep the workflo
 4. Apply SON Home area rules exactly.
 5. Calculate line totals and after-discount totals.
 6. Build a render payload JSON.
-7. Render the quote card image in the approved layout.
-8. Return or send the generated image.
+7. Validate the payload.
+8. Render the quote card image in the approved layout.
+9. Return or send the generated image.
+
+Read `references/quote-pipeline.md` for the full end-to-end operational flow.
 
 If the workbook mapping is ambiguous, stop and ask instead of guessing.
 
@@ -78,6 +81,7 @@ Use the approved SON Home quote image structure.
 
 ### Visual direction
 - Keep the quote card in a wide horizontal format.
+- Active master sample registry: `assets/master-samples/registry.json`
 - Use the soft mint pastel palette, not the old blue palette.
 - Keep the layout clean, bright, calm, and easy to scan.
 - Do not include `SON HOME` in the title unless explicitly requested.
@@ -125,6 +129,12 @@ When adapting this skill for another bot:
 
 ### scripts/render_quote_card.py
 Use this script to render a quote-card PNG from an input JSON payload.
+
+### scripts/validate_quote_payload.py
+Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
+
+### scripts/run_quote_render_pipeline.sh
+Use this shell wrapper to run validation first, then render in one small flow.
 
 Expected usage:
 ```bash
