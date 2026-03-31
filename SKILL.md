@@ -169,6 +169,9 @@ Operator mode can now attempt workbook-based unit-price resolution automatically
 ### scripts/image_extract_to_structured.py
 Use this to normalize image-extraction output into engine-ready structured input JSON.
 
+### scripts/chat_to_structured.py
+Use this to convert rough raw-chat quote messages into engine-ready structured input candidates.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -212,6 +215,9 @@ Use this when connecting workbook price resolution into operator-mode execution.
 
 ### references/image-to-structured-input.md
 Use this when bridging image-derived extraction output into engine-ready structured input.
+
+### references/raw-chat-preprocessor.md
+Use this when the user typed a shorthand quote request and you want a normalized candidate structure before engine execution.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.
