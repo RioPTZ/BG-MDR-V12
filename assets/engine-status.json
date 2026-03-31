@@ -1,0 +1,43 @@
+{
+  "engine": "son-home-quote-image",
+  "version": "8.0.0",
+  "phasesCompleted": [
+    "phase-1-memory-checklist-validator",
+    "phase-2-pipeline-master-sample-registry",
+    "phase-3-quote-brain-payload-builder-versioning",
+    "phase-4-operator-mode",
+    "phase-5-schema-confidence-multiline",
+    "phase-6-auto-routing",
+    "phase-7-super-entrypoint",
+    "phase-8-audit-status-layer"
+  ],
+  "capabilities": [
+    "project-memory",
+    "quote-verification-checklist",
+    "payload-validator",
+    "quote-pipeline",
+    "master-sample-registry",
+    "quote-brain",
+    "workflow-versioning",
+    "operator-mode",
+    "structured-input-schema",
+    "confidence-scoring",
+    "multiline-payload-support",
+    "auto-routing",
+    "super-entrypoint",
+    "engine-status-audit"
+  ],
+  "routes": [
+    "text-single-line",
+    "text-multi-line",
+    "image-handwriting",
+    "operator-fast-path",
+    "ask-back"
+  ],
+  "gaps": [
+    "automatic workbook price resolver from code",
+    "automatic Telegram direct-send integration from engine entry",
+    "image-to-structured-input bridge",
+    "true end-to-end one-command quote execution from raw chat input"
+  ]
+}
