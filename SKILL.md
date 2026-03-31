@@ -48,6 +48,17 @@ Minimum fields:
 - discount
 - system
 
+## Reading quote input from images
+
+When quote input comes from a handwritten or messy measurement image:
+- first use **Gemini Flash vision** to extract only: product code, `N`, `C`, `SL`, and notes
+- then use local OCR only as a cross-check / fallback, not as the only reader
+- if Gemini produces a plausible read and the operator confirms it, continue with pricing instead of asking the same basic fields again
+- if Gemini output is implausible, challenge it with layout evidence + OCR before pricing
+- for handwritten photos, do not skip the Gemini step and jump straight into local OCR-only questioning
+
+Read `references/image-reading-workflow.md` for the detailed workflow when packaging or reusing this skill on another bot/runtime.
+
 ## Area calculation rules
 
 These rules are mandatory.
