@@ -6,6 +6,7 @@ description: Create SON Home curtain quote images from workbook-driven pricing r
 # SON Home Quote Packaged
 
 Workflow version reference: `assets/workflow-version.json`
+Default operator config: `assets/operator/defaults.json`
 
 ## Overview
 
@@ -137,6 +138,9 @@ Use this script to render a quote-card PNG from an input JSON payload.
 ### scripts/build_quote_payload.py
 Use this to build a final render payload JSON from resolved structured inputs.
 
+### scripts/quote_operator.py
+Use this for semi-automatic operator mode: structured input -> build -> validate -> render.
+
 ### scripts/validate_quote_payload.py
 Use this before rendering to catch blank totals, blank `Sau CK`, or missing row fields.
 
@@ -153,6 +157,9 @@ Use this bundled sample payload to test the render path quickly before wiring th
 
 ### references/son-home-quote-brain.md
 Use this as the decision-core reference: defaults, priority order, image-reading decisions, pricing decisions, render rules, and delivery rules.
+
+### references/operator-mode.md
+Use this when speed matters and ambiguity is already resolved; it explains the shortest safe operator flow.
 
 ### references/vol12-notes.md
 Use this reference for quick workbook structure recall: product families, system groups, and helpful notes about Vol 12.

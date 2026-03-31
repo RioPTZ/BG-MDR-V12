@@ -1,0 +1,9 @@
+{
+  "title": "BÁO GIÁ RÈM",
+  "defaultSystem": "Standard",
+  "rendererScript": "/root/.openclaw/workspace/scripts/render_quote_card.py",
+  "outputDir": "/root/.openclaw/workspace/out/quotes",
+  "activeWorkflowVersion": "3.0.0",
+  "directDeliveryPreferred": true,
+  "sampleRegistry": "/root/.openclaw/workspace/skills/son-home-quote-image/assets/master-samples/registry.json"
+}
